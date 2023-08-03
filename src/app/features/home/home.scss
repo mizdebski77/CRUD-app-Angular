@@ -1,0 +1,28 @@
+.title {
+    text-align: center;
+    font-size: 28px;
+}
+
+.form {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid orange;
+}
+
+.button {
+    padding: 10px;
+    min-width: 120px;
+    border: none;
+    border-radius: 10px;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
