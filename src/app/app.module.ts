@@ -5,12 +5,14 @@ import { AppComponent } from './app';
 import { HomeComponent } from './features/home/home';
 import { FormComponent } from './features/form/form';
 import { RoutingModule } from './common/router';
+import { HeaderComponent } from './features/form/header/header';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FormComponent
+    FormComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
