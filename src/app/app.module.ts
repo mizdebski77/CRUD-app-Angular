@@ -7,6 +7,7 @@ import { FormComponent } from './features/form/form';
 import { RoutingModule } from './common/router';
 import { HeaderComponent } from './features/form/header/header';
 import { DataFormComponent } from './features/form/data-form/data-form';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DataFormComponent } from './features/form/data-form/data-form';
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
