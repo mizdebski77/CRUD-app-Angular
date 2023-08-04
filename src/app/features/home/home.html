@@ -1,9 +1,9 @@
-<div >
+<div>
     <h2 class="title">
         Wprowadź wartość konta
     </h2>
-    <form action="submit" class="form">
-        <input type="text" class="input">
+    <div class="form">
+        <input type="text" class="input" [(ngModel)]="inputValue">
         <button class="button" (click)="gotToNextPage()">Next</button>
-    </form>
+    </div>
 </div>

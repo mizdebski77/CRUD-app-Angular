@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from 'src/app/common/sharedService';
 
 @Component({
   selector: 'app-data-form',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./data-form.scss']
 })
 export class DataFormComponent {
-
+  amount: number;
+  
+  constructor(private sharedService: SharedService) {
+    this.amount = this.sharedService.getValue();
+  }
 }
