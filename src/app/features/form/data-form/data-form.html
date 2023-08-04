@@ -1,6 +1,46 @@
 <div class="wrapper">
     <div class="amount">Dostępne śordki: {{amount}}</div>
     <form class="form">
+        <div class="labelWrapper">
+            <label class="label" for="campaignName">Campaign Name *</label>
+            <input class="input" type="text" name="campaignName">
+        </div>
 
+        <div class="labelWrapper">
+            <label class="label" for="keywords">Key Words *</label>
+            <input class="input" type="text" name="keywords">
+        </div>
+
+        <div class="labelWrapper">
+            <label class="label" for="campaignFund">Campaign Found *</label>
+            <input class="input" type="number" name="campaignFund" min="0">
+        </div>
+
+        <div class="labelWrapper">
+            <label class="label" for="town">Town *</label>
+            <select class="input" name="town">
+                <option value="town1">Kraków</option>
+                <option value="town2">Katowice</option>
+                <option value="town3">Gliwice</option>
+                <option value="town4">Warszawa</option>
+                <option value="town5">Poznań</option>
+                <option value="town6">Wrocław</option>
+            </select>
+        </div>
+
+        <div class="labelWrapper">
+            <label class="label" for="radius">Radius (km) *</label>
+            <input class="input" type="number" name="radius" min="0">
+        </div>
+
+        <div class="statusWrapper">
+            <label class="label">State:</label>
+            <input class="input" type="radio" name="status" value="on">
+            <label for="statusOn">Active</label>
+            <input class="input" type="radio" name="status" value="off">
+            <label for="statusOff">Inactive</label>
+        </div>
+
+        <button class="saveButton">Save Campaign</button>
     </form>
 </div>

@@ -11,5 +11,9 @@ export class DataFormComponent {
   
   constructor(private sharedService: SharedService) {
     this.amount = this.sharedService.getValue();
+  };
+
+  addCampaign () {
+    
   }
 }
