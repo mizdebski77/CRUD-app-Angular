@@ -45,4 +45,5 @@
             {{editIndex !== null ? 'Save Changes' : 'Save Campaign'}}
         </button>
     </form>
+    <app-list [campaigns]="campaigns" (editCampaign)="editCampaign($event)"></app-list>
 </div>

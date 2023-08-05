@@ -18,19 +18,25 @@ export class DataFormComponent {
   };
 
   addCampaign() {
+    if (this.campaign.campaignFund > this.amount) {
+      alert("Not enough funds in the account.");
+      return;
+    };
+
     if (this.editIndex !== null) {
-      this.campaign[this.editIndex] = { ... this.campaign };
+      this.campaigns[this.editIndex] = { ... this.campaign };
       this.editIndex = null;
     } else {
       const newCampaign = { ...this.campaign };
-      this.campaign.push(...newCampaign);
+      this.campaigns.push(newCampaign);
+      this.amount -= this.campaign.campaignFund;
     };
 
     this.clearForm();
   };
 
   editCampaign(index: number) {
-    this.campaign = { ... this.campaign[index] };
+    this.campaign = { ... this.campaigns[index] };
     this.editIndex = index;
   };
 
@@ -40,5 +46,5 @@ export class DataFormComponent {
 
   clearForm() {
     this.campaign = {};
-  }
+  };
 }
