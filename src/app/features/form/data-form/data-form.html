@@ -1,24 +1,24 @@
 <div class="wrapper">
-    <div class="amount">Dostępne śordki: {{amount}}</div>
+    <div class="amount">Dostępne środki: {{ amount }}</div>
     <form class="form">
         <div class="labelWrapper">
             <label class="label" for="campaignName">Campaign Name *</label>
-            <input class="input" type="text" name="campaignName" [(ngModel)]="campaign.campaignName">
+            <input class="input" type="text" name="campaignName" [(ngModel)]="campaign.campaignName" required>
         </div>
 
         <div class="labelWrapper">
             <label class="label" for="keywords">Key Words *</label>
-            <input class="input" type="text" name="keywords" [(ngModel)]="campaign.keywords">
+            <input class="input" type="text" name="keywords" [(ngModel)]="campaign.keywords" required>
         </div>
 
         <div class="labelWrapper">
-            <label class="label" for="campaignFund">Campaign Found *</label>
-            <input class="input" type="number" name="campaignFund" min="0" [(ngModel)]="campaign.campaignFund">
+            <label class="label" for="campaignFund">Campaign Fund *</label>
+            <input class="input" type="number" name="campaignFund" min="0" [(ngModel)]="campaign.campaignFund" required>
         </div>
 
         <div class="labelWrapper">
             <label class="label" for="town">Town *</label>
-            <select class="input" name="town" [(ngModel)]="campaign.town">
+            <select class="input" name="town" [(ngModel)]="campaign.town" required>
                 <option value="town1">Kraków</option>
                 <option value="town2">Katowice</option>
                 <option value="town3">Gliwice</option>
@@ -30,20 +30,21 @@
 
         <div class="labelWrapper">
             <label class="label" for="radius">Radius (km) *</label>
-            <input class="input" type="number" name="radius" min="0" [(ngModel)]="campaign.radius">
+            <input class="input" type="number" name="radius" min="0" [(ngModel)]="campaign.radius" required>
         </div>
 
         <div class="statusWrapper">
             <label class="label">State:</label>
-            <input class="input" type="radio" name="status" value="on" [(ngModel)]="campaign.status">
+            <input class="input" type="radio" name="status" value="on" [(ngModel)]="campaign.state" required>
             <label for="statusOn">Active</label>
-            <input class="input" type="radio" name="status" value="off" [(ngModel)]="campaign.status">
+            <input class="input" type="radio" name="status" value="off" [(ngModel)]="campaign.state" required>
             <label for="statusOff">Inactive</label>
         </div>
 
-        <button class="saveButton" (click)="addCampaign()">
-            {{editIndex !== null ? 'Save Changes' : 'Save Campaign'}}
-        </button>
+        <button class="saveButton" (click)="addCampaign()" [disabled]="!isFormValid()">
+            {{ editIndex !== null ? 'Save Changes' : 'Save Campaign' }}
+          </button>
+          
     </form>
     <app-list [campaigns]="campaigns" (editCampaign)="editCampaign($event)"></app-list>
 </div>

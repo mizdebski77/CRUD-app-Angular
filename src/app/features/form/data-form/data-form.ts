@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedService } from 'src/app/common/sharedService';
+import { Campaign } from './data-formModules';
 
 @Component({
   selector: 'app-data-form',
@@ -10,7 +11,14 @@ export class DataFormComponent {
 
   amount: number;
   campaigns: any[] = [];
-  campaign: any = {};
+  campaign: Campaign = {
+    campaignName: '',
+    keywords: '',
+    campaignFund: 0,
+    town: '',
+    radius: 0,
+    state: '',
+  };
   editIndex: number | null = null;
 
   constructor(private sharedService: SharedService) {
@@ -41,10 +49,29 @@ export class DataFormComponent {
   };
 
   deleteCampaign(index: number) {
-    this.campaign.splice(index, 1);
-  };
+    this.campaigns.splice(index, 1);
+  }
 
   clearForm() {
-    this.campaign = {};
-  };
+    this.campaign = {
+      campaignName: '',
+      keywords: '',
+      campaignFund: 0,
+      town: '',
+      radius: 0,
+      state: 'On',
+    };
+  }
+  
+
+  isFormValid(): boolean {
+    return (
+      this.campaign.campaignName.trim() !== '' &&
+      this.campaign.keywords.trim() !== '' &&
+      this.campaign.campaignFund > 0 &&
+      this.campaign.town !== '' &&
+      this.campaign.radius > 0 &&
+      this.campaign.state !== ''
+    );
+  }
 }
