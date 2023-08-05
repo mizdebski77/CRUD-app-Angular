@@ -3,7 +3,6 @@
       <tr>
         <th>Nazwa kampanii</th>
         <th>Słowa kluczowe</th>
-        <th>Kwota Stawki</th>
         <th>Środki na kampanię</th>
         <th>Miasto</th>
         <th>Promień</th>
@@ -13,7 +12,6 @@
       <tr *ngFor="let campaign of campaigns; let i = index">
         <td>{{ campaign.campaignName }}</td>
         <td>{{ campaign.keywords }}</td>
-        <td>{{ campaign.bAmount }}</td>
         <td>{{ campaign.campaignFund }} PLN</td>
         <td>{{ campaign.town }}</td>
         <td>{{ campaign.radius }} km</td>

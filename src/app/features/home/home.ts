@@ -9,7 +9,7 @@ import { SharedService } from 'src/app/common/sharedService';
 })
 export class HomeComponent {
 
-  inputValue: number = 0;
+  inputValue: number = 500;
 
   constructor(private router: Router, private sharedService: SharedService) { }
 

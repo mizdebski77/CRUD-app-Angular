@@ -31,13 +31,12 @@
     transition: 0.2s;
 
     &:hover {
-        transform: scale(1.02);
         box-shadow: 0 0 4px orange;
     }
 
     &:disabled {
         opacity: 0.2;
-        pointer-events: none; 
+        cursor: no-drop;
     }
 }
 
