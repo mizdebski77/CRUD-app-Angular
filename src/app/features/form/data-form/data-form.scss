@@ -22,6 +22,57 @@
     cursor: pointer;
 }
 
+.headerWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.amount {
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.amountValue {
+    color: orange;
+    font-weight: bold;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.backButton {
+    padding: 10px;
+    text-align: center;
+    min-width: 120px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    color: orange;
+    border: 2px solid orange;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+        box-shadow: 0 0 10px orange;
+    }
+
+    &:disabled {
+        opacity: 0.2;
+        cursor: no-drop;
+    }
+}
+
+.status {
+    cursor: pointer;
+}
+
 .saveButton {
     padding: 10px;
     cursor: pointer;
@@ -43,7 +94,6 @@
         cursor: no-drop;
     }
 }
-
 
 .statusWrapper {
     display: flex;

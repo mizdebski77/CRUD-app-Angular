@@ -38,5 +38,6 @@
 
     &:disabled {
         opacity: 0.2;
+        cursor: no-drop;
     }
 }
