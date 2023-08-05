@@ -4,6 +4,6 @@ export interface Campaign {
     campaignFund: number;
     town: string;
     radius: number;
-    state: string;
+    status: string;
 };
 

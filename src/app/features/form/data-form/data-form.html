@@ -34,17 +34,17 @@
         </div>
 
         <div class="statusWrapper">
-            <label class="label">State:</label>
-            <input class="input" type="radio" name="status" value="on" [(ngModel)]="campaign.state" required>
-            <label for="statusOn">Active</label>
-            <input class="input" type="radio" name="status" value="off" [(ngModel)]="campaign.state" required>
-            <label for="statusOff">Inactive</label>
-        </div>
+            <label class="label">Status:</label>
+            <input class="input" type="radio" name="status" value="on" required [(ngModel)]="campaign.status">
+            <label for="statusOn">Włączona</label>
+            <input class="input" type="radio" name="status" value="off" required [(ngModel)]="campaign.status">
+            <label for="statusOff">Wyłączona</label>
+          </div>
 
         <button class="saveButton" (click)="addCampaign()" [disabled]="!isFormValid()">
             {{ editIndex !== null ? 'Save Changes' : 'Save Campaign' }}
-          </button>
-          
+        </button>
+
     </form>
     <app-list [campaigns]="campaigns" (editCampaign)="editCampaign($event)"></app-list>
 </div>

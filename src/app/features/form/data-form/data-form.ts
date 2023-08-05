@@ -17,7 +17,7 @@ export class DataFormComponent {
     campaignFund: 0,
     town: '',
     radius: 0,
-    state: '',
+    status: '',
   };
   editIndex: number | null = null;
 
@@ -34,6 +34,8 @@ export class DataFormComponent {
     if (this.editIndex !== null) {
       this.campaigns[this.editIndex] = { ... this.campaign };
       this.editIndex = null;
+      this.amount -= this.campaign.campaignFund;
+
     } else {
       const newCampaign = { ...this.campaign };
       this.campaigns.push(newCampaign);
@@ -46,6 +48,7 @@ export class DataFormComponent {
   editCampaign(index: number) {
     this.campaign = { ... this.campaigns[index] };
     this.editIndex = index;
+    this.amount += this.campaigns[index].campaignFund;
   };
 
   deleteCampaign(index: number) {
@@ -59,10 +62,10 @@ export class DataFormComponent {
       campaignFund: 0,
       town: '',
       radius: 0,
-      state: 'On',
+      status: '',
     };
   }
-  
+
 
   isFormValid(): boolean {
     return (
@@ -71,7 +74,7 @@ export class DataFormComponent {
       this.campaign.campaignFund > 0 &&
       this.campaign.town !== '' &&
       this.campaign.radius > 0 &&
-      this.campaign.state !== ''
+      this.campaign.status !== ''
     );
   }
 }
