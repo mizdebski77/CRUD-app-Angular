@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SharedService } from 'src/app/common/sharedService';
 import { Campaign } from './data-formModules';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-data-form',
@@ -21,7 +22,7 @@ export class DataFormComponent {
   };
   editIndex: number | null = null;
 
-  constructor(private sharedService: SharedService) {
+  constructor(private router: Router, private sharedService: SharedService) {
     this.amount = this.sharedService.getValue();
   };
 
@@ -56,7 +57,7 @@ export class DataFormComponent {
     this.amount += this.campaigns[index].campaignFund;
     this.campaigns.splice(index, 1);
   };
-  
+
 
   clearForm() {
     this.campaign = {
@@ -67,7 +68,7 @@ export class DataFormComponent {
       radius: 0,
       status: '',
     };
-  }
+  };
 
   isFormValid(): boolean {
     return (
@@ -78,5 +79,9 @@ export class DataFormComponent {
       this.campaign.radius > 0 &&
       this.campaign.status !== ''
     );
-  }
+  };
+
+  navigateToHome() {
+    this.router.navigate(['/home']); // Zakładając, że "home" to ścieżka do strony głównej
+  };
 }
