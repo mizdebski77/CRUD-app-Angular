@@ -1,7 +1,6 @@
 <div>
     <h2 class="title">
-        Wprowadź wartość konta (minimalna wartość to 500)
-    </h2>
+        Enter bid amount in $ </h2>
     <div class="form">
         <input type="number" class="input" [(ngModel)]="inputValue" min="500">
         <button class="button" [disabled]="inputValue < 500" (click)="gotToNextPage()">Next</button>

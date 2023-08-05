@@ -10,7 +10,7 @@ import { Campaign } from './data-formModules';
 export class DataFormComponent {
 
   amount: number;
-  campaigns: any[] = [];
+  campaigns: Campaign[] = [];
   campaign: Campaign = {
     campaignName: '',
     keywords: '',
@@ -51,9 +51,12 @@ export class DataFormComponent {
     this.amount += this.campaigns[index].campaignFund;
   };
 
+
   deleteCampaign(index: number) {
+    this.amount += this.campaigns[index].campaignFund;
     this.campaigns.splice(index, 1);
-  }
+  };
+  
 
   clearForm() {
     this.campaign = {
@@ -65,7 +68,6 @@ export class DataFormComponent {
       status: '',
     };
   }
-
 
   isFormValid(): boolean {
     return (

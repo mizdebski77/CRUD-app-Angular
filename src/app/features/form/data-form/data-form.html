@@ -1,5 +1,10 @@
 <div class="wrapper">
-    <div class="amount">Dostępne środki: {{ amount }}</div>
+    <div class="amount">Available funds on the emerald account:
+        <span class="amountValue"> {{ amount }} zł</span>
+    </div>
+    <div class="buttonWrapper">
+        <button class="backButton">Back</button>
+    </div>
     <form class="form">
         <div class="labelWrapper">
             <label class="label" for="campaignName">Campaign Name *</label>
@@ -35,16 +40,17 @@
 
         <div class="statusWrapper">
             <label class="label">Status:</label>
-            <input class="input" type="radio" name="status" value="on" required [(ngModel)]="campaign.status">
-            <label for="statusOn">Włączona</label>
-            <input class="input" type="radio" name="status" value="off" required [(ngModel)]="campaign.status">
-            <label for="statusOff">Wyłączona</label>
-          </div>
+            <input class="input status" type="radio" name="status" value="on" required [(ngModel)]="campaign.status">
+            <label for="statusOn">Active</label>
+            <input class="input status" type="radio" name="status" value="off" required [(ngModel)]="campaign.status">
+            <label for="statusOff">Inactive</label>
+        </div>
 
         <button class="saveButton" (click)="addCampaign()" [disabled]="!isFormValid()">
             {{ editIndex !== null ? 'Save Changes' : 'Save Campaign' }}
         </button>
 
     </form>
-    <app-list [campaigns]="campaigns" (editCampaign)="editCampaign($event)"></app-list>
+    <app-list [campaigns]="campaigns" (editCampaign)="editCampaign($event)"
+        (deleteCampaign)="deleteCampaign($event)"></app-list>
 </div>

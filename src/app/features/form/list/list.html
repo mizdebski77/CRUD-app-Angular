@@ -18,7 +18,7 @@
         <td  [ngClass]="campaign.status === 'on' ? 'activeCampaign' : 'inActiveCampaign'">{{ campaign.status === 'on' ? 'Active' : 'Inactive' }}</td>
         <td>
           <button class="actionButton editButton" (click)="onEditCampaign(i)">Edit</button>
-          <button class="actionButton deleteButton" (click)="deleteCampaign(i)">Delete</button>
+          <button class="actionButton deleteButton" (click)="onDeleteCampaign(i)">Delete</button>
         </td>
       </tr>
     </table>
