@@ -5,11 +5,7 @@
 - [Introduction](#introduction)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
 - [Demo](#demo)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
