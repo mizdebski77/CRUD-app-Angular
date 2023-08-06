@@ -30,5 +30,4 @@ To set up the app locally, follow these steps:
 
 ## Demo
 
-You can find a demo version [here](crudaplication.netlify.app).
-
+You can find a demo version [here](https://crudaplication.netlify.app/)
