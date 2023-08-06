@@ -1,8 +1,14 @@
+@import '../../../common/theme.scss';
+
 .form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 40px 0;
+
+    @media (max-width: $mobileMax) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .labelWrapper {
@@ -12,10 +18,21 @@
 
 .label {
     font-weight: bold;
+
+    @media (max-width: $mobileMax) {
+        font-size: 16px;
+    }
+}
+
+.statusText {
+    @media (max-width: $mobileMax) {
+        font-size: 16px;
+    }
 }
 
 .input {
     padding: 10px;
+    border-radius: 10px;
 }
 
 .state {
@@ -33,6 +50,10 @@
     font-weight: 100;
     letter-spacing: 1px;
     text-align: center;
+
+    @media (max-width: $mobileMax) {
+        font-size: 20px;
+    }
 }
 
 .amountValue {
@@ -59,6 +80,10 @@
     cursor: pointer;
     transition: 0.5s;
 
+    @media (max-width: $mobileMax) {
+        padding: 8px;
+    }
+
     &:hover {
         box-shadow: 0 0 10px orange;
     }
@@ -71,6 +96,10 @@
 
 .status {
     cursor: pointer;
+
+    @media (max-width: $mobileMax) {
+        font-size: 16px;
+    }
 }
 
 .saveButton {
@@ -84,6 +113,12 @@
     font-weight: bold;
     border-radius: 10px;
     transition: 0.2s;
+
+    
+    @media (max-width: $mobileMax) {
+        padding: 8px;
+        width: 100%;
+    }
 
     &:hover {
         box-shadow: 0 0 4px orange;
@@ -101,4 +136,9 @@
     gap: 20px;
     font-size: 20px;
     margin-top: 20px;
+    
+    @media (max-width: $mobileMax) {
+        margin-top: 10px;
+        gap: 10px;
+    }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SharedService } from 'src/app/common/sharedService';
 import { Campaign } from './data-formModules';
 import { Router } from '@angular/router';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-data-form',
@@ -9,18 +10,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./data-form.scss']
 })
 export class DataFormComponent {
-
+  cities: string[] = ['Warszawa', 'Kraków', 'Wrocław', 'Gdańsk', 'Poznań'];
+  selectedCity: string = ''; // Przechowuje wybrane miasto
+  editIndex: number | null = null;
   amount: number;
   campaigns: Campaign[] = [];
   campaign: Campaign = {
     campaignName: '',
     keywords: '',
     campaignFund: 0,
-    town: '',
+    city: '',
     radius: 0,
     status: '',
   };
-  editIndex: number | null = null;
+
+
 
   constructor(private router: Router, private sharedService: SharedService) {
     this.amount = this.sharedService.getValue();
@@ -64,7 +68,7 @@ export class DataFormComponent {
       campaignName: '',
       keywords: '',
       campaignFund: 0,
-      town: '',
+      city: '',
       radius: 0,
       status: '',
     };
@@ -75,13 +79,13 @@ export class DataFormComponent {
       this.campaign.campaignName.trim() !== '' &&
       this.campaign.keywords.trim() !== '' &&
       this.campaign.campaignFund > 0 &&
-      this.campaign.town !== '' &&
+      this.campaign.city !== '' &&
       this.campaign.radius > 0 &&
       this.campaign.status !== ''
     );
   };
 
   navigateToHome() {
-    this.router.navigate(['/home']); // Zakładając, że "home" to ścieżka do strony głównej
+    this.router.navigate(['/home']);
   };
 }

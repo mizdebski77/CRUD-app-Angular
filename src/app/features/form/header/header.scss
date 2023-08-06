@@ -1,5 +1,11 @@
+@import '../../../common/theme.scss';
+
 .title {
     font-size: 36px;
     font-weight: normal;
     text-align: center;
+
+    @media (max-width: $mobileMax) {
+        font-size: 28px;
+    }
 }

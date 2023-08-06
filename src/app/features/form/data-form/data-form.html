@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="amount">Available funds on the emerald account:
-        <span class="amountValue"> {{ amount }} zł</span>
+        <span class="amountValue"> {{ amount }} $</span>
     </div>
     <div class="buttonWrapper">
         <button class="backButton" (click)="navigateToHome()">Back</button>
@@ -22,8 +22,8 @@
         </div>
 
         <div class="labelWrapper">
-            <label class="label" for="town">Town *</label>
-            <select class="input" name="town" [(ngModel)]="campaign.town" required>
+            <label class="label" for="city">City *</label>
+            <select class="input" name="city" [(ngModel)]="campaign.city" required>
                 <option value="Kraków">Kraków</option>
                 <option value="Katowice">Katowice</option>
                 <option value="Gliwice">Gliwice</option>
@@ -41,10 +41,11 @@
         <div class="statusWrapper">
             <label class="label">Status:</label>
             <input class="input status" type="radio" name="status" value="on" required [(ngModel)]="campaign.status">
-            <label for="statusOn">Active</label>
+            <label class="statusText" for="statusOn">Active</label>
             <input class="input status" type="radio" name="status" value="off" required [(ngModel)]="campaign.status">
-            <label for="statusOff">Inactive</label>
+            <label class="statusText" for="statusOff">Inactive</label>
         </div>
+
 
         <button class="saveButton" (click)="addCampaign()" [disabled]="!isFormValid()">
             {{ editIndex !== null ? 'Save Changes' : 'Save Campaign' }}
@@ -54,3 +55,5 @@
     <app-list [campaigns]="campaigns" (editCampaign)="editCampaign($event)"
         (deleteCampaign)="deleteCampaign($event)"></app-list>
 </div>
+
+

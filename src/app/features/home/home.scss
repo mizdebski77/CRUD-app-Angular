@@ -1,12 +1,24 @@
+@import '../../common/theme.scss';
+
 .title {
     text-align: center;
     font-size: 28px;
+
+    @media (max-width: $mobileMax) {
+        font-size: 24px;
+        margin: 10px;
+    }
 }
 
 .form {
     display: flex;
     gap: 20px;
     justify-content: center;
+
+    @media (max-width: $mobileMax) {
+        display: grid;
+        gap: 8px;
+    }
 }
 
 .input {

@@ -1,19 +1,24 @@
-
 html {
-    box-sizing: border-box;
-  }
-  
-  *,
-  ::after,
-  ::before {
-    box-sizing: inherit;
-  }
+  box-sizing: border-box;
+}
 
-  body {
-    background-color: #dfdfdf;
-    margin: 0;
-    padding: 40px;
-    box-sizing: border-box;
-    word-break: break-word;
-    font-family: 'Poppins', sans-serif;}
-  
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+@import './app/common/theme.scss';
+
+body {
+  background-color: #dfdfdf;
+  margin: 0;
+  padding: 40px;
+  box-sizing: border-box;
+  word-break: break-word;
+  font-family: 'Poppins', sans-serif;
+
+  @media (max-width: $mobileMax) {
+    padding: 12px;
+  }
+}

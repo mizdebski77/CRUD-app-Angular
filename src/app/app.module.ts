@@ -9,7 +9,6 @@ import { HeaderComponent } from './features/form/header/header';
 import { DataFormComponent } from './features/form/data-form/data-form';
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from './features/form/list/list';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +16,7 @@ import { ListComponent } from './features/form/list/list';
     FormComponent,
     HeaderComponent,
     DataFormComponent,
-    ListComponent
+    ListComponent,
   ],
   imports: [
     BrowserModule,

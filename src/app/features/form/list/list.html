@@ -1,24 +1,25 @@
 <div class="wrapper" *ngIf="campaigns.length > 0">
-    <table class="table">
-      <tr>
-        <th>Nazwa kampanii</th>
-        <th>Słowa kluczowe</th>
-        <th>Środki na kampanię</th>
-        <th>Miasto</th>
-        <th>Promień</th>
-        <th>Status</th>
-        <th>Akcje</th>
-      </tr>
-      <tr *ngFor="let campaign of campaigns; let i = index">
-        <td>{{ campaign.campaignName }}</td>
-        <td>{{ campaign.keywords }}</td>
-        <td>{{ campaign.campaignFund }} PLN</td>
-        <td>{{ campaign.town }}</td>
-        <td>{{ campaign.radius }} km</td>
-        <td  [ngClass]="campaign.status === 'on' ? 'activeCampaign' : 'inActiveCampaign'">{{ campaign.status === 'on' ? 'Active' : 'Inactive' }}</td>
-        <td>
-          <button class="actionButton editButton" (click)="onEditCampaign(i)">Edit</button>
-          <button class="actionButton deleteButton" (click)="onDeleteCampaign(i)">Delete</button>
-        </td>
-      </tr>
-    </table>
+  <table class="table">
+    <tr>
+      <th>Campaign Name</th>
+      <th>Keywords </th>
+      <th>Campaign Fund</th>
+      <th>City </th>
+      <th>Radius </th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let campaign of campaigns; let i = index">
+      <td>{{ campaign.campaignName }}</td>
+      <td>{{ campaign.keywords }}</td>
+      <td>{{ campaign.campaignFund }} PLN</td>
+      <td>{{ campaign.city }}</td>
+      <td>{{ campaign.radius }} km</td>
+      <td [ngClass]="campaign.status === 'on' ? 'activeCampaign' : 'inActiveCampaign'">{{ campaign.status === 'on' ?
+        'Active' : 'Inactive' }}</td>
+      <td>
+        <button class="actionButton editButton" (click)="onEditCampaign(i)">Edit</button>
+        <button class="actionButton deleteButton" (click)="onDeleteCampaign(i)">Delete</button>
+      </td>
+    </tr>
+  </table>
