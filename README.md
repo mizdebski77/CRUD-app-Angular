@@ -9,7 +9,7 @@
 
 ## Introduction
 
-Welcome to the CRUD App README! This application has been created as a part of a recruitment task. The purpose of the app is to demonstrate the ability to develop a CRUD (Create, Read, Update, Delete) application for campaign management. This app allows users to add, edit, and delete campaigns, along with various campaign details, and is designed to showcase proficiency in front-end development.
+The application was developed as per the directive from Futurum Technology. Throughout the project, I collaborated with a seasoned Figma designer and a proficient backend developer. The link provided showcases the basic version of the application, as the complete version was exclusively delivered to the company. The purpose of the app is to demonstrate the ability to develop a CRUD (Create, Read, Update, Delete) application for campaign management.
 
 ## Technologies Used
 
